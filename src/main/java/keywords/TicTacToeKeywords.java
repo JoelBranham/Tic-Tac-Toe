@@ -13,12 +13,13 @@ public class TicTacToeKeywords {
 	public void markLocation(int row, int col) {
 		board.makeMark(row, col);
 	}
-	
+
 	public String getMark(int row, int col) {
-		return board.getMark(row,col) + "";
+		return board.getMarkString(row, col);
 	}
     
 	public String getWinner() {
-		return TicTacToeModel.getResultString(board.getResult());
+		return board.getWinner();
 	}
+
 }

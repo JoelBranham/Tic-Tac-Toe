@@ -67,7 +67,7 @@ public class TicTacToeTest {
 		board.makeMark(2, 2);
 		assertEquals(TicTacToeModel.Result.NONE, board.getResult());
 		board.makeMark(0, 2);
-		assertEquals(TicTacToeModel.Result.XWIN, board.getResult());
+		assertEquals(TicTacToeModel.Result.X, board.getResult());
 	}
 	
 	@Test
@@ -116,7 +116,7 @@ public class TicTacToeTest {
 		board.makeMark(0, 2);
 		assertEquals(TicTacToeModel.Result.NONE, board.getResult());
 		board.makeMark(2, 0);
-		assertEquals(TicTacToeModel.Result.OWIN, board.getResult());
+		assertEquals(TicTacToeModel.Result.O, board.getResult());
 	}
 
 	@Test  
@@ -130,7 +130,7 @@ public class TicTacToeTest {
 		board.makeMark(0, 2);
 		assertEquals(TicTacToeModel.Result.NONE, board.getResult());
 		board.makeMark(2, 2);
-		assertEquals(TicTacToeModel.Result.XWIN, board.getResult());
+		assertEquals(TicTacToeModel.Result.X, board.getResult());
 	}
 	
 	@Test
@@ -155,7 +155,7 @@ public class TicTacToeTest {
 		assertEquals(TicTacToeModel.Mark.O, largerBoard.getMark(0,4));
 		largerBoard.makeMark(4,4);
 		assertEquals(TicTacToeModel.Mark.X, largerBoard.getMark(4,4));
-		assertEquals(TicTacToeModel.Result.XWIN, largerBoard.getResult());
+		assertEquals(TicTacToeModel.Result.X, largerBoard.getResult());
 	}
 	
 	@Test

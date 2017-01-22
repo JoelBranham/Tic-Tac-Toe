@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TicTacToeModel{										
 	public enum Mark {X, O, EMPTY};
-	public enum Result {XWIN, OWIN, TIE, NONE};
+	public enum Result {X, O, TIE, NONE};
 	private Mark[][] grid;
 	private boolean xTurn;
 	private int width;
@@ -49,10 +49,10 @@ public class TicTacToeModel{
 	
 	public Result getResult(){
 		if (markWin(Mark.O)){
-			return Result.OWIN;
+			return Result.O;
 		}
 		else if (markWin(Mark.X)){
-			return Result.XWIN;
+			return Result.X;
 		}
 		else if (checkIfTie()){
 			return Result.TIE;
@@ -99,29 +99,25 @@ public class TicTacToeModel{
 		return width;
 	}
 	
-	public static String getResultString(Result result){
-		if (Result.XWIN == result){
-			return "X";
-		}
-		else if (Result.OWIN == result){
+	public String getMarkString(int row, int col){
+		return getMark(row,col).toString();
+	}
+
+	public String getWinner(){
+		if (markWin(Mark.O)){
 			return "O";
 		}
-		return result + "";
-	} 
+		else if (markWin(Mark.X)){
+			return "X";
+		}
+		else if (checkIfTie()){
+			return "TIE";
+		}
+		return "NONE";
+	}
 	
-	private static String getGameoverMessage(Result result){
-		if (Result.XWIN == result){
-			return "\nPlayer 1 (X) wins!";
-		}
-		else if (Result.OWIN == result){
-			return "\nPlayer 2 (O) wins!";
-		}
-		else if (Result.TIE == result){
-			return "\nIt's a tie!";
-		}
-		else{
-			return "\nNone.";
-		}
+	public String getWinnerPhrase(){
+		return "The winner is " + getWinner();
 	}
 	
 	private String getPlayerMessage(){
@@ -196,8 +192,8 @@ public class TicTacToeModel{
 		System.out.println(getInstructions());
 	}
 	
-	
-	public void printGameoverMessage(){
-		System.out.println(getGameoverMessage(this.getResult()));
+	public static void printGameoverMessage(String gameover){
+		System.out.println(gameover);
 	}
+
 }
