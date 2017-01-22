@@ -98,7 +98,7 @@ public class TicTacToeModel{
 	public int getWidth(){
 		return width;
 	}
-	
+	      
 	public String getMarkString(int row, int col){
 		return getMark(row,col).toString();
 	}
