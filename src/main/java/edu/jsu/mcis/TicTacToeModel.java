@@ -104,20 +104,11 @@ public class TicTacToeModel{
 	}
 
 	public String getWinner(){
-		if (markWin(Mark.O)){
-			return "O";
-		}
-		else if (markWin(Mark.X)){
-			return "X";
-		}
-		else if (checkIfTie()){
-			return "TIE";
-		}
-		return "NONE";
+		return getResult().toString();
 	}
 	
 	public String getWinnerPhrase(){
-		return "The winner is " + getWinner();
+		return "The winner is " + getResult().toString();
 	}
 	
 	private String getPlayerMessage(){
@@ -192,8 +183,9 @@ public class TicTacToeModel{
 		System.out.println(getInstructions());
 	}
 	
-	public static void printGameoverMessage(String gameover){
-		System.out.println(gameover);
+	public void printGameoverMessage(){
+		String s = getWinnerPhrase();
+		System.out.println(s);
 	}
 
 }

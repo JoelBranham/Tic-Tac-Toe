@@ -13,6 +13,7 @@ public class TicTacToeGame{
 			board.printPlayerMessage();
 			board.takeKeyInput(in);
 		}
-		board.printGameoverMessage(board.getWinnerPhrase());
+		board.viewModel();
+		board.printGameoverMessage();
 	}
 }
