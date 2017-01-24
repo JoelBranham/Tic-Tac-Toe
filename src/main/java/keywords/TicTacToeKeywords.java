@@ -15,11 +15,11 @@ public class TicTacToeKeywords {
 	}
 
 	public String getMark(int row, int col) {
-		return board.getMarkString(row, col);
+		return board.getMark(row, col).toString();
 	}
     
 	public String getWinner() {
-		return board.getWinner();
+		return board.getResult().toString().toUpperCase();
 	}
 
 }
