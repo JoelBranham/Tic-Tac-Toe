@@ -1,6 +1,7 @@
 buildscript {
     dependencies {
         classpath files(mkdir('build/classes/main'))
+		classpath 'org.robotframework:swinglibrary:1.9.6'
     }
 }
 

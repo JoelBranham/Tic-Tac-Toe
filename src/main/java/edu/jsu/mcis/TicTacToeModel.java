@@ -121,15 +121,8 @@ public class TicTacToeModel{
 		return tie;
 	}
 	
-	public boolean isGameover(){
-		return Result.NONE != getResult();
-	}
-	
-	public boolean isXTurn(){
-		return xTurn;
-	}
-	
 	public int getWidth(){
 		return width;
 	}
+
 }

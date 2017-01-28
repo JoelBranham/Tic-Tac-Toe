@@ -1,23 +1,30 @@
 package edu.jsu.mcis;
 
-import java.util.Scanner; 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 
 public class TicTacToeGame{
+	
 	public static void main(String[] args) {
 		int width = 3;
 		if(args.length >= 1) {
 			try {
-				width = Integer.parseInt(args[0]);
+				int n = Integer.parseInt(args[0]);
+				if (n % 2 == 1 && n >= 3 && n <= 9){
+					width = Integer.parseInt(args[0]);
+				}
 			}
 			catch(NumberFormatException e) {}
 		}
-		TicTacToeModel board = new TicTacToeModel(width);
-		TicTacToeViewController boardVC = new TicTacToeViewController(board);
-		while (!board.isGameover()){
-			boardVC.viewModel();
-			boardVC.controlModel();
-		}
-		boardVC.viewModel();
-		System.out.println(board.getResult() + "!");
+		TicTacToeViewController boardVC = new TicTacToeViewController(width);
+        JFrame win = new JFrame("Tic Tac Toe");
+		win.setJMenuBar(TicTacToeViewController.menuBar);
+        win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        win.add(boardVC);
+        win.pack();
+        win.setVisible(true);
 	}
+	
 }
